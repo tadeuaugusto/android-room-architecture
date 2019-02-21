@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
             viewModel.insert(note);
             Toast.makeText(this, "Thank you! Note has been saved.", Toast.LENGTH_SHORT).show();
         } else if (requestCode == EDIT_NOTE_REQUEST && resultCode == RESULT_OK) {
-            int id = data.getIntExtra(AddEditNoteActivity.EXTRA_ID, 1);
+            int id = data.getIntExtra(AddEditNoteActivity.EXTRA_ID, -1);
 
             if (id == -1) {
                 Toast.makeText(this, "Note CAN'T be updated!", Toast.LENGTH_SHORT).show();
