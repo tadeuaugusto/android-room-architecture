@@ -1,5 +1,6 @@
 package com.example.roomarchitectureexample;
 
+import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.Ignore;
 import android.arch.persistence.room.PrimaryKey;
@@ -8,11 +9,16 @@ import android.arch.persistence.room.PrimaryKey;
 public class Note {
 
     @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = "id")
     private int id;
+
+    @ColumnInfo(name = "title")
     private String title;
+
+    @ColumnInfo(name = "description")
     private String description;
 
-    @Ignore
+    @ColumnInfo(name = "priority")
     private int priority;
 
     public Note(String title, String description, int priority) {
